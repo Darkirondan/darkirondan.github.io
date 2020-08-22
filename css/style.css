@@ -2,55 +2,91 @@
     box-sizing: border-box;
 }
 
-.loader-container{
-    position: relative;
-    width: 60px;
-    height: 60px;
-    margin: 10px;
+body {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: "Poppins";
+    font-size: 14px;
+    line-height: 26px;
+    color: #fff;
+    background: #373b40;
+    letter-spacing: 0;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
-.loader-container .loader{
-    position: absolute;
-    top: 50%;
-    left: 50%;
+.preloader {
+    position: fixed;
+    top: 0;
     width: 100%;
-    height: 100%;
-    border: solid 4px transparent;
-    border-top-color: #0dac77;
-    border-left-color: #0dac77;
-    border-radius: 50%;
-    animation: loader 1.2s linear infinite;
+    height: 0;
+    z-index: 999;
 }
 
-.loader-container .loader2{
+.preloader .box-1{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: #68e0cf;
+}
+
+.centrize {
+    display: table !important;
+    table-layout: fixed !important;
+    height: 100% !important;
+    position: relative !important;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.full-width {
+    max-width: 100%;
+    width: 100%;
+}
+
+.vertical-center {
+    display: table-cell !important;
+    vertical-align: middle !important;
+}
+
+.preloader .spinner {
+    margin: -40px 0 0 -5px;
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 70%;
-    height: 70%;
-    border: solid 4px transparent;
-    border-top-color: #283fc3;
-    border-left-color: #283fc3;
-    border-radius: 50%;
-    animation: loader2 1.2s linear infinite;
+    width: 10px;
+    height: 80px;
 }
 
-@keyframes loader{
-    0%{
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-
-    100%{
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
+.preloader .spinner .lines {
+    position: absolute;
+    width: 10px;
+    height: 80px;
 }
 
-@keyframes loader2{
-    0%{
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
+.preloader .spinner .lines:before {
+    left: 0;
+    animation: loading 2s cubic-bezier(.165,.85,.45,1) 0s infinite;
+}
 
-    100%{
-        transform: translate(-50%, -50%) rotate(-360deg);
-    }
+.preloader .spinner .lines:before, .preloader .spinner .lines:after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 80px;
+    background: #fff;
+    clip: rect(0,0,20px,0);
+    -webkit-clip: rect(0,0,20px,0);
+}
+
+.preloader .spinner .lines:after {
+    left: 15px;
+    background: #68e0cf;
+    animation: loading 2s cubic-bezier(.165,.85,.45,1) .5s infinite;
 }
