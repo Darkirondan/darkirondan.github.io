@@ -10161,11 +10161,7 @@ blockquote {
   background-size: cover;
   background-color: #68e0cf;
 }
-.background-filter .background-img {
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-  mix-blend-mode: luminosity;
-}
+
 .background-filter.gradient:after {
   content: "";
   position: absolute;
@@ -10191,20 +10187,7 @@ blockquote {
     #373b40 90%
   );
 }
-.background-filter.gradient .background-img {
-  -webkit-filter: none;
-  filter: none;
-  mix-blend-mode: unset;
-}
-.background-filter.circle {
-  clip-path: circle(75% at 10% 45%);
-  -webkit-clip-path: circle(75% at 10% 45%);
-}
-.background-filter.circle .background-img {
-  -webkit-filter: none;
-  filter: none;
-  mix-blend-mode: unset;
-}
+
 .background-img {
   position: absolute;
   left: 0;
